@@ -1,0 +1,30 @@
+package com.senai.infob.ControleAtrasos.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.senai.infob.ControleAtrasos.models.Atraso;
+import com.senai.infob.ControleAtrasos.services.AtrasoService;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
+@RestController
+@RequestMapping("/atraso")
+public class AtrasoController {
+    
+    @Autowired
+    public AtrasoService atrasoService;
+    
+    @PutMapping("/atualizar/{id}")
+    public Atraso atualizar(@PathVariable Integer id, @RequestBody Atraso atraso) {
+        if(atrasoService.atualizar(atraso, id)) {
+            return atraso;
+        }
+        return null;
+    }
+
+
+}
