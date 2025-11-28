@@ -30,18 +30,18 @@ public class Atraso {
     private Integer quantidade;
     
     @ManyToOne
-    @JoinColumn(name = "atraso_id", nullable = false)
-    private Atraso atraso;
+    @JoinColumn(name = "aluno_id")
+    private Aluno aluno;
 
     public Atraso() {
     }
 
-    public Atraso(Integer id, LocalDate data, LocalDateTime cpf, Integer quantidade, Atraso atraso) {
+    public Atraso(Integer id, LocalDate data, LocalDateTime cpf, Integer quantidade, Aluno aluno) {
         this.id = id;
         this.data = data;
         this.cpf = cpf;
         this.quantidade = quantidade;
-        this.atraso = atraso;
+        this.aluno = aluno;
     }
 
     public Integer getId() {
@@ -76,13 +76,12 @@ public class Atraso {
         this.quantidade = quantidade;
     }
 
-    public Atraso getAtraso() {
-        return atraso;
+    public Aluno getAluno() {
+        return aluno;
     }
 
-    public void setAtraso(Atraso atraso) {
-        this.atraso = atraso;
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
     }
-
     
 }

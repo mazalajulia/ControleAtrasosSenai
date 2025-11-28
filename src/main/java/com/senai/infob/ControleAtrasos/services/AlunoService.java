@@ -13,36 +13,36 @@ public class AlunoService {
     private AlunoRepository alunoRepository;
 
  
-    public Aluno cadastrarUsuario(Aluno usuario, String confirmarSenha) {
-        if (!usuario.getSenha().equals(confirmarSenha)) {
+    public Aluno cadastrarUsuario(Aluno aluno, String confirmarSenha, String senha) {
+        if (!senha.equals(confirmarSenha)) {
             return null;
         }
 
-        alunoRepository.save(usuario);
-        return usuario;
+        alunoRepository.save(aluno);
+        return aluno;
     }
 
     public Aluno login(String email, String senha) {
-        Aluno usuario = alunoRepository.findByEmail(email);
+        Aluno aluno = alunoRepository.findByEmail(email);
 
-        if (usuario == null) {
+        if (aluno == null) {
             System.out.println("Usuário não encontrado!");
             return null;
         }
 
-        if (!usuario.getSenha().equals(senha)) {
+        if (!aluno.getSenha().equals(senha)) {
             System.out.println("Senha incorreta!");
             return null;
         }
 
-        return usuario;
+        return aluno;
     }
     
     public boolean atualizar(Aluno usuario, Integer id) {
         Aluno usu = alunoRepository.findById(id).get();
         if (usu != null) {
-            usuario.setId(id);
-            alunoRepository.save(usuario);
+            aluno.setId(id);
+            alunoRepository.save(aluno);
             return true;
         }
         return false;
