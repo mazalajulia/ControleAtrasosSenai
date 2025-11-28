@@ -23,8 +23,8 @@ public class Atraso {
     @Column(name = "data")
     private LocalDate data;
 
-    @Column(name = "hora")
-    private LocalDateTime cpf;
+    @Column(name = "cpf")
+    private String cpf;
 
     @Column(name = "quantidade")
     private Integer quantidade;
@@ -33,55 +33,34 @@ public class Atraso {
     @JoinColumn(name = "aluno_id")
     private Aluno aluno;
 
-    public Atraso() {
-    }
-
-    public Atraso(Integer id, LocalDate data, LocalDateTime cpf, Integer quantidade, Aluno aluno) {
-        this.id = id;
-        this.data = data;
-        this.cpf = cpf;
-        this.quantidade = quantidade;
-        this.aluno = aluno;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public LocalDateTime getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(LocalDateTime cpf) {
-        this.cpf = cpf;
-    }
-
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
+        public Atraso() {
+        }
     
+        public Atraso(Integer id, LocalDate data, String cpf, Integer quantidade, Aluno aluno) {
+            this.id = id;
+            this.data = data;
+            this.cpf = cpf;
+            this.quantidade = quantidade;
+            this.aluno = aluno;
+        }
+    
+        public Integer getId() {
+            return id;
+        }
+    
+        public void setId(Integer id) {
+            this.id = id;
+        }
+    
+        public LocalDate getData() {
+            return data;
+        }
+    
+        public void setData(LocalDate data) {
+            this.data = data;
+        }
+    
+        public String getCpf() {
+            return cpf;
+        }
 }

@@ -8,6 +8,6 @@ import com.senai.infob.ControleAtrasos.models.Atraso;
 
 @Repository
 public interface AtrasoRepository extends JpaRepository<Atraso, Integer> {
-    @Query(value="select * from usuario where email = email", nativeQuery = true)
+    @Query(value="select * from atraso where email = email", nativeQuery = true)
     public Atraso findByEmail(String email);
 }

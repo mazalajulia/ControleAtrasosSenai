@@ -38,7 +38,7 @@ public class AlunoService {
         return aluno;
     }
     
-    public boolean atualizar(Aluno usuario, Integer id) {
+    public boolean atualizar(Aluno aluno, Integer id) {
         Aluno usu = alunoRepository.findById(id).get();
         if (usu != null) {
             aluno.setId(id);
