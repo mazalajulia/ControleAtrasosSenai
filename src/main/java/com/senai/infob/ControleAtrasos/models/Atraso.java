@@ -8,8 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -34,23 +32,17 @@ public class Atraso {
 
     @Column(name = "quantidade")
     private Integer quantidade;
-    
-    @ManyToOne
-    @JoinColumn(name = "aluno_id")
-    private Aluno aluno;
 
     public Atraso() {
     }
 
-    public Atraso(Integer id, LocalDate data, LocalTime hora, String nomeCompleto, String turma, Integer quantidade,
-            Aluno aluno) {
+    public Atraso(Integer id, LocalDate data, LocalTime hora, String nomeCompleto, String turma, Integer quantidade) {
         this.id = id;
         this.data = data;
         this.hora = hora;
         this.nomeCompleto = nomeCompleto;
         this.turma = turma;
         this.quantidade = quantidade;
-        this.aluno = aluno;
     }
 
     public Integer getId() {
@@ -101,14 +93,5 @@ public class Atraso {
         this.quantidade = quantidade;
     }
 
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
-
     
-       
 }
