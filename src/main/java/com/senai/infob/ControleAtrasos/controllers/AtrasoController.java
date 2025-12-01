@@ -18,13 +18,11 @@ public class AtrasoController {
     @Autowired
     public AtrasoService atrasoService;
     
-    @PutMapping("/atualizar/{id}")
-    public Atraso atualizar(@PathVariable Integer id, @RequestBody Atraso atraso) {
-        if(atrasoService.atualizar(atraso, id)) {
-            return atraso;
-        }
-        return null;
-    }
+  @PutMapping("/atualizar/{id}")
+public Atraso atualizar(@PathVariable Integer id, @RequestBody Atraso atraso) {
+    atrasoService.atualizar(atraso, id);
+    return atraso;
+}
 
 
 }
