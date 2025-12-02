@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.senai.infob.ControleAtrasos.models.Funcionario;
 import com.senai.infob.ControleAtrasos.models.Atraso;
 import com.senai.infob.ControleAtrasos.services.AtrasoService;
 
@@ -24,7 +26,6 @@ public class AtrasoController {
     @Autowired
     public AtrasoService atrasoService;
 
-    @PostMapping("/salvar")
     public Atraso salvar(@RequestBody Atraso atraso) {
         return atrasoService.salvar(atraso);
     }

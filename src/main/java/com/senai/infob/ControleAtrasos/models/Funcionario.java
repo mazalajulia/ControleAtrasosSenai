@@ -10,8 +10,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="aluno")
-public class Aluno {
+@Table(name="funcionario")
+public class Funcionario {
    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -35,10 +35,10 @@ public class Aluno {
      @Column(name = "turma")
     private String turma;
 
-     public Aluno() {
+     public Funcionario() {
      }
 
-     public Aluno(Integer id, String nomeCompleto, String cpf, LocalDate dataNascimento, String email, String senha,
+     public Funcionario(Integer id, String nomeCompleto, String cpf, LocalDate dataNascimento, String email, String senha,
             String turma) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;

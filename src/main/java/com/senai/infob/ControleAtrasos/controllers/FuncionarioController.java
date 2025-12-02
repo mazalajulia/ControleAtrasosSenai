@@ -13,36 +13,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.senai.infob.ControleAtrasos.models.Aluno;
-import com.senai.infob.ControleAtrasos.services.AlunoService;
+import com.senai.infob.ControleAtrasos.models.Funcionario;
+import com.senai.infob.ControleAtrasos.services.FuncionarioService;
 
 @RestController
-@RequestMapping("/aluno")
-public class AlunoController {
+@RequestMapping("/funcionario")
+public class FuncionarioController {
     
     @Autowired
-    public AlunoService alunoService;
+    public FuncionarioService funcionarioService;
     
     
     @PostMapping("/login")
-    public Aluno login(@RequestParam String email,@RequestParam String senha) {
-        return alunoService.login(email, senha);
+    public Funcionario login(@RequestParam String email,@RequestParam String senha) {
+        return funcionarioService.login(email, senha);
     }
     
     @PostMapping("/cadastro")
-    public Aluno cadastro(@RequestBody Aluno aluno, @RequestParam String confirmarSenha, @RequestParam String senha) {
-        return alunoService.cadastrarUsuario(aluno, confirmarSenha, senha);
+    public Funcionario cadastro(@RequestBody Funcionario funcionario, @RequestParam String confirmarSenha, @RequestParam String senha) {
+        return funcionarioService.cadastrarUsuario(funcionario, confirmarSenha, senha);
     }
     @PutMapping("/atualizar/{id}")
-    public Aluno atualizar(@PathVariable Integer id, @RequestBody Aluno aluno) {
-        if(alunoService.atualizar(aluno, id)) {
-            return aluno;
+    public Funcionario atualizar(@PathVariable Integer id, @RequestBody Funcionario funcionario) {
+        if(funcionarioService.atualizar(funcionario, id)) {
+            return funcionario;
         }
         return null;
     }
      @DeleteMapping("/deletar/{id}")
     public String deletar(@PathVariable Integer id) {
-        Boolean deletou = alunoService.delete(id);
+        Boolean deletou = funcionarioService.delete(id);
         if (deletou) {
             return "Aluno removido com sucesso";
         }
@@ -50,11 +50,11 @@ public class AlunoController {
     }
 
        @GetMapping("/listar")
-    public List<Aluno> listarTodos() {
-        return alunoService.listarTodos();
+    public List<Funcionario> listarTodos() {
+        return funcionarioService.listarTodos();
     }
       @GetMapping("/buscar/{id}")
-    public Aluno buscarPorId(@PathVariable Integer id) {
-        return alunoService.buscarPorId(id);
+    public Funcionario buscarPorId(@PathVariable Integer id) {
+        return funcionarioService.buscarPorId(id);
     }
 }
