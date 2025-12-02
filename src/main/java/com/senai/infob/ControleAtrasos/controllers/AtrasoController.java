@@ -1,9 +1,8 @@
 package com.senai.infob.ControleAtrasos.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,13 +17,8 @@ public class AtrasoController {
     @Autowired
     public AtrasoService atrasoService;
     
-    @PutMapping("/atualizar/{id}")
-    public Atraso atualizar(@PathVariable Integer id, @RequestBody Atraso atraso) {
-        if(atrasoService.atualizar(atraso, id)) {
-            return atraso;
-        }
-        return null;
+     @GetMapping("/buscar/{id}")
+    public Atraso buscarPorId(@PathVariable Integer id) {
+        return atrasoService.buscarPorId(id);
     }
-
-
 }
