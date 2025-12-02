@@ -50,8 +50,8 @@ public class AlunoService {
     }
     
     public boolean atualizar(Aluno aluno, Integer id) {
-        Aluno usu = alunoRepository.findById(id).get();
-        if (usu != null) {
+        Aluno alu = alunoRepository.findById(id).get();
+        if (alu != null) {
             aluno.setId(id);
             alunoRepository.save(aluno);
             return true;
