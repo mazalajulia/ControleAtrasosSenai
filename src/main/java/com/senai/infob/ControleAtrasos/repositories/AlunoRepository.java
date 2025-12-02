@@ -8,6 +8,6 @@ import com.senai.infob.ControleAtrasos.models.Aluno;
 
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Integer> {
-    @Query(value="select * from aluno where email = :email", nativeQuery = true)
+    @Query(value="select * from atraso where email = email", nativeQuery = true)
     public Aluno findByEmail(String email);
 }

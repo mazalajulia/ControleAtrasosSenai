@@ -1,5 +1,7 @@
 package com.senai.infob.ControleAtrasos.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,15 @@ public class AlunoService {
 
         alunoRepository.save(aluno);
         return aluno;
+    }
+
+    public Boolean  delete(Integer id) {
+        Aluno aluno = alunoRepository.findById(id).get();
+        if(aluno != null) {
+            alunoRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
     public Aluno login(String email, String senha) {
@@ -47,4 +58,14 @@ public class AlunoService {
         }
         return false;
     }
+
+     public List<Aluno> listarTodos() {
+        return alunoRepository.findAll();
+    }
+
+    public Aluno buscarPorId(Integer id) {
+    return alunoRepository.findById(id).orElse(null);
+}
+
+   
 }

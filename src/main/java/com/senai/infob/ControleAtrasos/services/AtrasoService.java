@@ -31,9 +31,9 @@ public class AtrasoService{
         return false;
     }
 
-  public Atraso buscarPorId(Integer id) {
-    return atrasoRepository.findById(id).orElse(null);
-}
+    public Atraso buscarPorId(Integer id) {
+        return atrasoRepository.findById(id).orElse(null);
+    }
     
     public List<Atraso> listarTodos() {
         return atrasoRepository.findAll();
