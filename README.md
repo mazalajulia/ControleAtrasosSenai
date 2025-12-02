@@ -8,4 +8,7 @@ O sistema oferece um CRUD completo, incluindo cadastro, login, listagem, busca p
 
 Lista de membros: 
 Gabrielle Silva, Giovana Baltar, Julia Mazala e Maria Alice Gehren.
+
+link do slide: https://www.canva.com/design/DAG5s7i61Lw/xew2lKxnC0HXWY_z0Bi3vQ/edit
+
 # ControleAtrasosSenai
