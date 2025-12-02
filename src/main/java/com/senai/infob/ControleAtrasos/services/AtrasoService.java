@@ -31,21 +31,23 @@ public class AtrasoService{
         return false;
     }
 
-    public Atraso buscarPorId(Integer id) {
-        return atrasoRepository.findById(id).get();
-    }
+  public Atraso buscarPorId(Integer id) {
+    return atrasoRepository.findById(id).orElse(null);
+}
     
     public List<Atraso> listarTodos() {
         return atrasoRepository.findAll();
     }
 
-    public boolean atualizar(Atraso atraso, Integer id) {
-        Atraso end = buscarPorId(id);
-        if (end != null) {
-            atraso.setId(id);
-            atrasoRepository.save(atraso);
-            return true;
-        }
-        return false;
+ public boolean atualizar(Atraso atraso, Integer id) {
+    Atraso existente = buscarPorId(id);
+
+    if (existente != null) {
+        atraso.setId(id);
+        atrasoRepository.save(atraso);
+        return true;
     }
+
+    return false;
+}
 }

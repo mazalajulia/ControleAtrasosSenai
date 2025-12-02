@@ -1,15 +1,13 @@
 package com.senai.infob.ControleAtrasos.models;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,44 +21,77 @@ public class Atraso {
     @Column(name = "data")
     private LocalDate data;
 
-    @Column(name = "cpf")
-    private String cpf;
+    @Column(name = "hora")
+    private LocalTime hora;
+
+    @Column(name = "nome_completo")
+    private String nomeCompleto;
+
+     @Column(name = "turma")
+    private String turma;
 
     @Column(name = "quantidade")
     private Integer quantidade;
-    
-    @ManyToOne
-    @JoinColumn(name = "aluno_id")
-    private Aluno aluno;
 
-        public Atraso() {
-        }
+    public Atraso() {
+    }
+
+    public Atraso(Integer id, LocalDate data, LocalTime hora, String nomeCompleto, String turma, Integer quantidade) {
+        this.id = id;
+        this.data = data;
+        this.hora = hora;
+        this.nomeCompleto = nomeCompleto;
+        this.turma = turma;
+        this.quantidade = quantidade;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public String getNomeCompleto() {
+        return nomeCompleto;
+    }
+
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getTurma() {
+        return turma;
+    }
+
+    public void setTurma(String turma) {
+        this.turma = turma;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
     
-        public Atraso(Integer id, LocalDate data, String cpf, Integer quantidade, Aluno aluno) {
-            this.id = id;
-            this.data = data;
-            this.cpf = cpf;
-            this.quantidade = quantidade;
-            this.aluno = aluno;
-        }
-    
-        public Integer getId() {
-            return id;
-        }
-    
-        public void setId(Integer id) {
-            this.id = id;
-        }
-    
-        public LocalDate getData() {
-            return data;
-        }
-    
-        public void setData(LocalDate data) {
-            this.data = data;
-        }
-    
-        public String getCpf() {
-            return cpf;
-        }
 }

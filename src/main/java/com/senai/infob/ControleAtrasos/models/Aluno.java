@@ -24,7 +24,7 @@ public class Aluno {
     private String cpf;
 
     @Column(name = "data_nascimento")
-    private String dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(name = "email")
     private String email;
@@ -38,7 +38,8 @@ public class Aluno {
      public Aluno() {
      }
 
-    public Aluno(Integer id, String nomeCompleto, String cpf, String dataNascimento, String email, String senha, String turma) {
+     public Aluno(Integer id, String nomeCompleto, String cpf, LocalDate dataNascimento, String email, String senha,
+            String turma) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.cpf = cpf;
@@ -46,62 +47,64 @@ public class Aluno {
         this.email = email;
         this.senha = senha;
         this.turma = turma;
-        
-    }
+     }
 
-    public Integer getId() {
-        return id;
-    }
+     public Integer getId() {
+         return id;
+     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+     public void setId(Integer id) {
+         this.id = id;
+     }
 
-    public String getNomeCompleto() {
-        return nomeCompleto;
-    }
+     public String getNomeCompleto() {
+         return nomeCompleto;
+     }
 
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
-    }
+     public void setNomeCompleto(String nomeCompleto) {
+         this.nomeCompleto = nomeCompleto;
+     }
 
-    public String getCpf() {
-        return cpf;
-    }
+     public String getCpf() {
+         return cpf;
+     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+     public void setCpf(String cpf) {
+         this.cpf = cpf;
+     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
+     public LocalDate getDataNascimento() {
+         return dataNascimento;
+     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
+     public void setDataNascimento(LocalDate dataNascimento) {
+         this.dataNascimento = dataNascimento;
+     }
 
-    public String getEmail() {
-        return email;
-    }
+     public String getEmail() {
+         return email;
+     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+     public void setEmail(String email) {
+         this.email = email;
+     }
 
-    public String getSenha() {
-        return senha;
-    }
+     public String getSenha() {
+         return senha;
+     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+     public void setSenha(String senha) {
+         this.senha = senha;
+     }
 
-    public String getTurma() {
-        return turma;
-    }
+     public String getTurma() {
+         return turma;
+     }
 
-    public void setTurma(String turma) {
-        this.turma = turma;
-    }
+     public void setTurma(String turma) {
+         this.turma = turma;
+     }
+
+    
+     
 }
