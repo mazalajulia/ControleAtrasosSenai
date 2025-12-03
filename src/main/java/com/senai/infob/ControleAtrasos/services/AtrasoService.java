@@ -19,8 +19,8 @@ public class AtrasoService{
     }
 
     public Atraso salvar(Atraso atraso) {
-        return atrasoRepository.save(atraso);
-    }
+    return atrasoRepository.save(atraso);
+}
 
     public Boolean  delete(Integer id) {
         Atraso atraso = atrasoRepository.findById(id).get();
