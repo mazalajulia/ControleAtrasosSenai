@@ -1,4 +1,4 @@
-<img width="388" height="813" alt="Captura de tela 2025-12-04 093759" src="https://github.com/user-attachments/assets/c054982f-2a6c-484e-abc6-528807a218cd" />Controle de Atraso 
+ >Controle de Atraso 
 
 Descrição do Projeto: 
 O Sistema de Controle de Atrasos Escolar foi desenvolvido para modernizar o registro e o acompanhamento de atrasos dos alunos. O projeto integra uma API em Java hospedada no Render e um aplicativo criado no FlutterFlow, permitindo que usuários realizem login, cadastros e consultem informações de forma simples e acessível, com navegação fluida entre as telas. 
