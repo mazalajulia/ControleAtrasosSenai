@@ -11,4 +11,8 @@ Gabrielle Silva, Giovana Baltar, Julia Mazala e Maria Alice Gehren.
 
 link do slide: https://www.canva.com/design/DAG5s7i61Lw/xew2lKxnC0HXWY_z0Bi3vQ/edit
 
+link do deploy: https://controleatrasossenai-zba9.onrender.com/aula/swagger-ui/index.html#/
+
+link da documentação: https://docs.google.com/document/d/1JzCAJ5xCWnkyEpo3Tv_hW7yqx7eep_I7jSRjhPRaOgU/edit?tab=t.0
+
 # ControleAtrasosSenai
